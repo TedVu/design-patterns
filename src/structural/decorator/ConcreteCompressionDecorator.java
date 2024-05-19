@@ -5,19 +5,19 @@ public class ConcreteCompressionDecorator extends AbstractDataSourceDecorator {
 		// TODO Auto-generated constructor stub
 		super.setDataSourceWrappee(a);
 	}
+
 	@Override
 	public void write(String data) {
 		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
-		System.out.println("Compression before writing!");
 		super.getDataSourceWrappee().write("Some data");
+		System.out.println("Compression after writing!");
 	}
 
 	@Override
 	public String read() {
 		// TODO Auto-generated method stub
-		System.out.println("Compression before read!");
 		super.getDataSourceWrappee().read();
+		System.out.println("Compression after read!");
 		return "Compression before read!";
 	}
 }
